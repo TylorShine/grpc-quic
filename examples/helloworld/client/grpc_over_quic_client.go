@@ -6,8 +6,8 @@ import (
 	"log"
 	"time"
 
-	qnet "github.com/sssgun/grpc-quic"
-	pb "github.com/sssgun/grpc-quic/examples/helloworld/helloworld"
+	qnet "github.com/TylorShine/grpc-quic"
+	pb "github.com/TylorShine/grpc-quic/examples/helloworld/helloworld"
 	"google.golang.org/grpc"
 )
 

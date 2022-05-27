@@ -6,12 +6,13 @@ import (
 	"crypto/tls"
 	"crypto/x509"
 	"encoding/pem"
-	"github.com/lucas-clemente/quic-go"
-	qnet "github.com/sssgun/grpc-quic"
-	pb "github.com/sssgun/grpc-quic/examples/helloworld/helloworld"
-	"google.golang.org/grpc"
 	"log"
 	"math/big"
+
+	qnet "github.com/TylorShine/grpc-quic"
+	pb "github.com/TylorShine/grpc-quic/examples/helloworld/helloworld"
+	"github.com/lucas-clemente/quic-go"
+	"google.golang.org/grpc"
 )
 
 func echoGrpcQuicServer(certFile, keyFile string) error {
@@ -44,7 +45,7 @@ func echoGrpcQuicServer(certFile, keyFile string) error {
 }
 
 func generateTLSConfig(certFile, keyFile string) (*tls.Config, error) {
-	if len(certFile) >0 && len(keyFile) > 0 {
+	if len(certFile) > 0 && len(keyFile) > 0 {
 		log.Printf("generateTLSConfig] certFile=%s, keyFile=%s", certFile, keyFile)
 
 		cert, err := tls.LoadX509KeyPair(certFile, keyFile)

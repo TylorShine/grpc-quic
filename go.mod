@@ -1,4 +1,4 @@
-module github.com/sssgun/grpc-quic
+module github.com/TylorShine/grpc-quic
 
 go 1.16
 

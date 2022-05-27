@@ -15,11 +15,11 @@ import (
 var _ net.Conn = (*Conn)(nil)
 
 type Conn struct {
-	sess   quic.Session
+	sess   quic.Connection
 	stream quic.Stream
 }
 
-func NewConn(sess quic.Session) (net.Conn, error) {
+func NewConn(sess quic.Connection) (net.Conn, error) {
 	stream, err := sess.OpenStreamSync(context.Background())
 	if err != nil {
 		return nil, err

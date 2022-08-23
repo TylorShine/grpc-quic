@@ -147,7 +147,7 @@ var quicConfig = &quic.Config{
 	// 	// TODO(#6): require source address validation when under load
 	// 	return true
 	// },
-	KeepAlive: true,
+	KeepAlivePeriod: 5 * time.Second,
 }
 
 func NewPacketConn(addr string) (net.PacketConn, error) {
